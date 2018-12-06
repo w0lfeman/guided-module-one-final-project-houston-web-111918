@@ -10,33 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181204213002) do
+ActiveRecord::Schema.define(version: 2018_12_04_213002) do
+
+  create_table "driver_races", force: :cascade do |t|
+    t.integer "driver_id"
+    t.integer "race_id"
+    t.index ["driver_id"], name: "index_driver_races_on_driver_id"
+    t.index ["race_id"], name: "index_driver_races_on_race_id"
+  end
 
   create_table "drivers", force: :cascade do |t|
-    t.string  "name"
+    t.string "name"
     t.integer "points"
     t.integer "wins"
     t.integer "driver_weight"
-    t.string  "driver_height"
-  end
-
-  create_table "race_cars", force: :cascade do |t|
-    t.string  "brand"
-    t.string  "chassis"
-    t.integer "weight"
-    t.integer "cost"
-    t.integer "horsepower"
-    t.integer "driver_id"
-    t.integer "race_id"
-    t.index ["driver_id"], name: "index_race_cars_on_driver_id"
-    t.index ["race_id"], name: "index_race_cars_on_race_id"
+    t.string "driver_height"
   end
 
   create_table "races", force: :cascade do |t|
-    t.string   "location"
-    t.datetime "date"
-    t.integer  "total_laps"
-    t.integer  "total_distance"
+    t.string "location"
+    t.date "date"
+    t.integer "total_laps"
+    t.integer "total_distance"
+    t.string "winner"
   end
 
 end

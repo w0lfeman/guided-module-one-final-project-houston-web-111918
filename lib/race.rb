@@ -1,6 +1,6 @@
 class Race < ActiveRecord::Base
 
-has_many :race_cars
-has_many :drivers, through: :race_cars
+has_many :driver_races
+has_many :drivers, through: :driver_races
 
 end 

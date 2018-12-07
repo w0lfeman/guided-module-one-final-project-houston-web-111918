@@ -6,6 +6,7 @@ new_cli = CommandLineInterface.new
 # new_cli.greeting
 # new_cli.gets_user_input 
 location = new_cli.run 
+new_cli.run_two
 
 
 
